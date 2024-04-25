@@ -39,9 +39,16 @@ Asian Nations, the East Asia Summit and the Organisation of Islamic Cooperation,
 Asia-Pacific Economic Cooperation, the Commonwealth of Nations, and the Non-Aligned Movement."""
 
         if request.form['patterns'] == "":
-            patterns = ["the, and, of, to, in, a, is, that, for, it, as, was, with, on, at"]
+            base_patterns = ["the", "and", "of", "to", "in", "a", "is", "that", "for", "it", "as", "was", "with", "on", "at"]
         else:
-            patterns = request.form['patterns'].split(',')
+            # Split the input by commas, strip spaces, and assume they are provided in lowercase
+            base_patterns = [p.strip() for p in request.form['patterns'].split(', ')]
+
+        patterns_dict = {pattern: i for i, pattern in enumerate(base_patterns)}
+        
+        # Extend the patterns list with capitalized versions of the words
+        patterns = base_patterns + [p.capitalize() for p in base_patterns]
+
 
         results = DFA_Recognizer.process_text(text, patterns)
 
