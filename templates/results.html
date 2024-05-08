@@ -9,6 +9,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #d8dbb2;
         }
 
         .container {
@@ -41,7 +42,18 @@
             {{ results|safe }}
         </div>
         <div class="btn-container">
-            <a href="/" class="btn btn-primary">Go back</a>
+            <a href="/" class="btn btn-primary">
+                <style>
+                    .btn-primary {
+                        background-color: #152873; /* Green background */
+                        color: white; /* White text */
+                    }
+                
+                    .btn-primary:hover {
+                        background-color: #08123a; /* Darker green on hover */
+                    }
+                </style>
+                Go back</a>
         </div>
 
     </div>

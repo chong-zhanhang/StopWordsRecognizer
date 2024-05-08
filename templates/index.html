@@ -8,6 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #d8dbb2;
         }
 
         .container {
@@ -35,7 +36,18 @@
                 <label for="patterns" class="form-label">Enter patterns (comma-separated, max 15)</label>
                 <input type="text" class="form-control" id="patterns" name="patterns" placeholder="e.g. and, was, that...">
             </div>
-            <button type="submit" class="btn btn-primary">Analyze</button>
+            <button type="submit" class="btn btn-primary">
+                <style>
+                    .btn-primary {
+                        background-color: #152873; /* Green background */
+                        color: white; /* White text */
+                    }
+                
+                    .btn-primary:hover {
+                        background-color: #08123a; /* Darker green on hover */
+                    }
+                </style>
+                Analyze</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
